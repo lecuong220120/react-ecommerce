@@ -6,6 +6,13 @@
     width: 100%;
     z-index: 1;
     height: $header-height;
+    .container{
+        height: 100%;
+    }
+    &.shrink{
+        height: $header-shrink-height;
+        box-shadow: $box-shadow;
+    }
     &__logo{
         @include flex(center,center);
         position: absolute;
@@ -16,9 +23,13 @@
         }
     }
     &__menu{
+        
         @include flex(center, space-between);
         height: 100%;
         font-size: 1.5rem;
+        &__mobile-toggle{
+            display: none;
+        }
         &__item ~ &__item{
             margin-left: 39px;
         }
@@ -32,9 +43,19 @@
         &__left,&__right{
             @include flex(center,center)
         }
-        &__mobile-toggle{
-            display: none;
+        &__right{
+            font-size: 2.25rem;
+            &__item{
+                @include flex(center, center)
+            }
+            @include tablet{
+                margin-left:auto
+            }
+            @include mobile{
+                font-size: 1.5rem;
+            }
         }
+     
         &__left{
             &__close{
                 display: none;

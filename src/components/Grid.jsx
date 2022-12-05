@@ -1,11 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 const Grid = props => {
+  const style = { 
+    gap: props.gap ? `${props.gap}px`:'0'
+  }
+  const col = props.col ? `grid-col-${props.col}` : ''
+  const mdCol = props.mdCol ? `grid-col-${props.mdCol}`:''
+  const smCol = props.smCol ? `grid-col-${props.smCol}`:''
   return (
-    <div>Grid</div>
+    <div className={`grid ${col} ${mdCol} ${smCol}`}>
+        {props.children}
+    </div>
   )
 }
-Grid.PropTypes = {
+Grid.propTypes = {
     col: PropTypes.number.isRequired,
     mdCol: PropTypes.number,
     smCol: PropTypes.number,

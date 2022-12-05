@@ -1,8 +1,8 @@
 import React from 'react'
-
+import Helmet from '../components/Helmet'
 const Catelog = () => {
   return (
-    <div>Catelog</div>
+    <Helmet title = "Sản phẩm">Catelog</Helmet>
   )
 }
 
